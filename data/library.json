@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "reviewed": "2026-10-21",
   "scope": "Meta Muse personal AI agent",
   "chapters": [
@@ -110,6 +110,66 @@
       "title": "维护、更新与社区贡献",
       "n": 18,
       "url": "guides/18-operations.md"
+    },
+    {
+      "slug": "19-official-install",
+      "title": "官方下载安装到首个任务",
+      "n": 19,
+      "url": "guides/19-official-install.md"
+    },
+    {
+      "slug": "20-whatsapp-cross-device",
+      "title": "WhatsApp 与跨设备协作",
+      "n": 20,
+      "url": "guides/20-whatsapp-cross-device.md"
+    },
+    {
+      "slug": "21-mac-desktop",
+      "title": "Mac 桌面版文件与日历实操",
+      "n": 21,
+      "url": "guides/21-mac-desktop.md"
+    },
+    {
+      "slug": "22-shopping-marketplace",
+      "title": "购物、比价、Marketplace 与退货",
+      "n": 22,
+      "url": "guides/22-shopping-marketplace.md"
+    },
+    {
+      "slug": "23-personal-finance",
+      "title": "财务、订阅费用与省钱任务",
+      "n": 23,
+      "url": "guides/23-personal-finance.md"
+    },
+    {
+      "slug": "24-fitness-coaching",
+      "title": "健身、营养与健康场景",
+      "n": 24,
+      "url": "guides/24-fitness-coaching.md"
+    },
+    {
+      "slug": "25-proactive-reminders",
+      "title": "后台任务、提醒与长期目标",
+      "n": 25,
+      "url": "guides/25-proactive-reminders.md"
+    },
+    {
+      "slug": "26-small-business-skills",
+      "title": "Muse for Small Business 经营实操",
+      "n": 26,
+      "url": "guides/26-small-business-skills.md"
+    },
+    {
+      "slug": "27-documents-images",
+      "title": "文档、图片生成与可交付结果",
+      "n": 27,
+      "url": "guides/27-documents-images.md"
+    },
+    {
+      "slug": "28-permissions-audit",
+      "title": "活动日志、审批与撤销权限",
+      "n": 28,
+      "url": "guides/28-permissions-audit.md"
     }
   ],
   "prompts": [
