@@ -7,7 +7,7 @@
 
 [![Muse Atlas 原创封面](assets/cover.svg)](https://aipmandy.github.io/muse-guide/)
 
-**[交互式官方网站](https://aipmandy.github.io/muse-guide/)** · [7 天入门](START-HERE.md) · [安全与隐私](docs/SECURITY.md) · [资料来源](docs/SOURCES.md) · [贡献指南](CONTRIBUTING.md)
+**[交互式网站](https://aipmandy.github.io/muse-guide/)** · [7 天入门](START-HERE.md) · [安全与隐私](docs/SECURITY.md) · [资料来源](docs/SOURCES.md) · [贡献指南](CONTRIBUTING.md)
 
 > **使用前确认**：本教程针对 Meta 2026 年推出的 **Muse 个人 Agent**，不是 Muse Code 编码助手，也不是 Muse Wonder 模型 API。不同地区、设备、账号和版本可能存在功能差异。本项目不提供非官方绕过限制的安装与授权方法。
 
@@ -95,7 +95,7 @@ python3 -m http.server 8000
 python3 -m unittest discover -s tests -v
 ```
 
-推送到 `main` 后 GitHub Actions 执行检查和 Pages 发布（须在仓库 Settings → Pages → Source 设为 GitHub Actions）。[部署说明](docs/DEPLOY.md)
+推送到 `main` 后 GitHub Actions 执行检查和 Pages 发布。[部署说明](docs/DEPLOY.md)
 
 ## 社区质量标准
 
