@@ -22,6 +22,7 @@
 | 安全检查 | **12 项** | 授权、注入、共享、写入、回滚、误操作应急 |
 | FAQ | **12 项** | 区分已经公开的官方能力与账户实际开放 |
 | 在线任务书生成器 | **1 个** | 浏览器本地运行，无后端，不采集输入 |
+| 开箱即用模板 | **8 套** | 任务书、授权矩阵、证据台账、内容与求职、客户交付、应急、ROI |
 
 ## 从哪开始
 
@@ -44,6 +45,19 @@
 | 07 | [文件、笔记与数据](guides/07-files-notes.md) | 16 | [评测与质量量化](guides/16-evaluation.md) |
 | 08 | [AI+IP 内容生产](guides/08-content-ip.md) | 17 | [Muse Agent / Code / 模型区别](guides/17-muse-ecosystem.md) |
 | 09 | [求职与面试](guides/09-job-hunting.md) | 18 | [更新机制与社区维护](guides/18-operations.md) |
+
+## 开箱即用模板
+
+- [Agent任务书](templates/agent-task-brief.md)
+- [连接器授权矩阵](templates/permission-matrix.md)
+- [调研证据台账](templates/source-evidence.md)
+- [AI+IP内容SOP](templates/content-ip-sop.md)
+- [求职匹配台账](templates/job-search-tracker.md)
+- [客户交付SOP](templates/business-delivery.md)
+- [误操作应急报告](templates/incident-response.md)
+- [订阅ROI评分表](templates/roi-scorecard.md)
+
+详细的[覆盖矩阵](docs/COVERAGE.md)、[真实测试协议](docs/BENCHMARK.md)、[对抗式审核](docs/AUDIT.md)和[待完成路线图](docs/ROADMAP.md)同样公开。
 
 ## 2026 年 10 月的重要安全提醒
 
