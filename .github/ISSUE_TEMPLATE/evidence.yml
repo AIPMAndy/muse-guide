@@ -1,0 +1,25 @@
+name: 提交新功能/实测证据
+description: 由社区补全真实账号功能矩阵
+title: "[Evidence] "
+body:
+  - type: dropdown
+    id: source_kind
+    attributes:
+      label: 证据类型
+      options:
+        - 官方文档
+        - 独立媒体
+        - 已脱敏账号实测
+        - 编辑性教学建议
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 一手来源链接
+  - type: textarea
+    id: detail
+    attributes:
+      label: 实际行为、时间、适用范围及反证
+    validations:
+      required: true

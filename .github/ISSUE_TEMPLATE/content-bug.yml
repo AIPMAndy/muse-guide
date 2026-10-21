@@ -1,0 +1,28 @@
+name: 内容错误 / 功能过期
+description: 反馈可复现的错误或失效链接，不包含私人账号数据
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "请勿上传客户聊天、密码、验证码、令牌、个人住址或敏感截图。"
+  - type: input
+    id: source
+    attributes:
+      label: 对应章节或链接
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤与预期/实际
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 官方或独立依据、核查日期
+  - type: input
+    id: scope
+    attributes:
+      label: 地区、客户端、账号层级（可不填）
