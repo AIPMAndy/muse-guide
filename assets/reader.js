@@ -4,12 +4,20 @@ const element=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined
 let timer;function toast(msg){const e=$('toast');e.textContent=msg;e.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>e.classList.remove('show'),2300);}
 async function copy(s){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(s);}else{const t=element('textarea');t.value=s;t.style.position='fixed';t.style.opacity='0';document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw Error('no clipboard');}toast('微信号 AIPMAndy 已复制');}catch(_){window.prompt('手动复制：',s);}}
 document.querySelectorAll('[data-wechat]').forEach(x=>x.addEventListener('click',()=>copy('AIPMAndy')));
+let currentDocUrl='guides/01-get-started.md';let knownSlugs=new Set();
 function inline(node,s){
  const re=/(\*\*[^*]+\*\*|\x60[^\x60]+\x60|\[[^\]]+\]\([^)]+\))/g;let last=0;
  for(const m of s.matchAll(re)){const p=m.index;if(p>last)node.append(document.createTextNode(s.slice(last,p)));
  const v=m[0];if(v.startsWith('**'))node.append(element('strong',v.slice(2,-2)));
  else if(v.startsWith('\x60'))node.append(element('code',v.slice(1,-1)));
- else{const a=v.match(/^\[([^\]]+)\]\(([^)]+)\)$/);if(a){const href=a[2];if(/^(https:\/\/|\.\.\/|[a-z0-9][a-z0-9./#-]*$)/i.test(href)&&!href.startsWith('//')){const x=element('a',a[1]);x.href=href;if(href.startsWith('https://')){x.target='_blank';x.rel='noopener noreferrer';}node.append(x);}else node.append(document.createTextNode(a[1]));}}
+ else{const a=v.match(/^\[([^\]]+)\]\(([^)]+)\)$/);if(a){const href=a[2];if(/^(https:\/\/|\.\.\/|[a-z0-9][a-z0-9./#-]*$)/i.test(href)&&!href.startsWith('//')){const x=element('a',a[1]);let finalHref=href;
+if(!href.startsWith('https://')){const resolved=new URL(href,new URL(currentDocUrl,location.href));
+ const page=resolved.pathname.match(/\\/guides\\/([a-z0-9-]+)\\.md$/);
+ if(page&&knownSlugs.has(page[1]))finalHref='read.html?chapter='+encodeURIComponent(page[1]);
+ else if(resolved.pathname.includes('/docs/')&&resolved.pathname.endsWith('.md')){const part=resolved.pathname.split('/docs/')[1];finalHref='https://github.com/AIPMAndy/muse-guide/blob/main/docs/'+part;}
+ else finalHref=resolved.href;
+}
+x.href=finalHref;if(finalHref.startsWith('https://')&&!finalHref.startsWith(location.origin)){x.target='_blank';x.rel='noopener noreferrer';}node.append(x);}else node.append(document.createTextNode(a[1]));}}
  last=p+v.length;}
  if(last<s.length)node.append(document.createTextNode(s.slice(last)));
 }
@@ -32,8 +40,8 @@ function renderMarkdown(str){
  return root;
 }
 fetch('data/library.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('目录HTTP '+r.status);return r.json();}).then(async d=>{
- const chapters=d.chapters;const u=new URL(location.href);const slug=u.searchParams.get('chapter')||chapters[0].slug;let index=chapters.findIndex(c=>c.slug===slug);if(index<0)index=0;
- const current=chapters[index];document.title=current.title+' | Muse Atlas';$('reader-title').textContent=current.title;
+ const chapters=d.chapters;knownSlugs=new Set(chapters.map(x=>x.slug));const u=new URL(location.href);const slug=u.searchParams.get('chapter')||chapters[0].slug;let index=chapters.findIndex(c=>c.slug===slug);if(index<0)index=0;
+ const current=chapters[index];currentDocUrl=current.url;document.title=current.title+' | Muse Atlas';$('reader-title').textContent=current.title;
  $('github-source').href='https://github.com/AIPMAndy/muse-guide/blob/main/'+current.url;
  $('reader-nav').replaceChildren(...chapters.map(c=>{const a=element('a',String(c.n).padStart(2,'0')+'　'+c.title);a.href='read.html?chapter='+encodeURIComponent(c.slug);if(c.slug===current.slug){a.classList.add('active');a.setAttribute('aria-current','page');}return a;}));
  $('chapter-prev').disabled=index===0;$('chapter-next').disabled=index===chapters.length-1;
