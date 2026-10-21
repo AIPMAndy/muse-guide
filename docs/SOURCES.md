@@ -33,3 +33,14 @@
 - 基于真实样本的任务成功率/复核成本：**等待社区授权的匿名实验**。
 
 欢迎按 [贡献模板](../CONTRIBUTING.md) 补充。禁止在 Issue 上传敏感凭据或他人的私人会话。
+
+
+## 2026-10-21 官方产品页补充
+
+- **客户端下载**：https://ai.meta.com/muse/download/（官方能力描述，非个人账号实测）。
+- **个人 Agent 主页与后台任务 FAQ**：https://ai.meta.com/muse/（官方能力描述，非个人账号实测）。
+- **邮件日历文件**：https://ai.meta.com/muse/productivity/（官方能力描述，非个人账号实测）。
+- **购物比价退货**：https://ai.meta.com/muse/shopping/（官方能力描述，非个人账号实测）。
+- **个人财务及取消订阅**：https://ai.meta.com/muse/finance/（官方能力描述，非个人账号实测）。
+- **健身与营养**：https://ai.meta.com/muse/fitness/（官方能力描述，非个人账号实测）。
+- **Muse for Small Business 官方公告**：https://about.fb.com/news/2026/09/introducing-muse-small-business/（官方能力描述，非个人账号实测）。

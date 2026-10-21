@@ -28,9 +28,9 @@ class TestMuseAtlas(unittest.TestCase):
    else: self.assertTrue((ROOT/link.split('#')[0]).is_file(),link)
  def test_card_counts_and_uniqueness(self):
   d=self.data
-  self.assertEqual(len(d['chapters']),18)
-  self.assertEqual(len(d['prompts']),60)
-  self.assertEqual(len(d['workflows']),10)
+  self.assertEqual(len(d['chapters']),28)
+  self.assertEqual(len(d['prompts']),80)
+  self.assertEqual(len(d['workflows']),12)
   self.assertEqual(len(d['checklist']),12)
   self.assertEqual(len(d['faq']),12)
   self.assertEqual(len(set(x['id'] for x in d['prompts'])),len(d['prompts']))

@@ -68,6 +68,7 @@ function renderWorkflows(){
  const a=el('article','workflow-card');a.append(el('div','meta',`SOP ${String(i+1).padStart(2,'0')} / ${w.group}`),el('h3','',w.title));
  const dl=el('dl');[['输入',w.input],['执行链',w.steps],['审批边界',w.approval],['验收指标',w.metric]].forEach(([k,v])=>{dl.append(el('dt','',k),el('dd','',v));});a.append(dl);return a;
  }));}
+function renderOfficial(){const root=$('official-grid');if(!root||!Array.isArray(library.capabilities))return;root.replaceChildren(...library.capabilities.map(item=>{const card=el('article','official-card');card.append(el('h3','',item.title),el('p','',item.note));const labels=el('div','official-status');labels.append(el('span','',item.evidence),el('span','',item.validation));card.append(labels);const actions=el('div','official-actions');const source=el('a','','Meta 原始来源 ↗');source.href=item.url;source.target='_blank';source.rel='noopener noreferrer';const doc=el('a','','查看专题 →');doc.href='read.html?chapter='+encodeURIComponent(item.chapter);actions.append(source,doc);card.append(actions);return card;}));}
 function renderChapters(){
  $('chapter-grid').replaceChildren(...library.chapters.map(c=>{
  const a=el('a','chapter-card');if(!/^guides\/[0-9a-z-]+\.md$/.test(c.url))return el('div','','章节路径无效');
@@ -103,7 +104,7 @@ function init(){
  const categories=['全部',...new Set(library.prompts.map(p=>p.category))];
  $('prompt-category').replaceChildren(...categories.map(c=>{const o=el('option','',c==='全部'?'全部场景':c);o.value=c;return o;}));
  $('prompt-search').addEventListener('input',renderPrompts);$('prompt-category').addEventListener('change',renderPrompts);$('fav-only').addEventListener('change',renderPrompts);
- renderPrompts();renderWorkflows();renderChapters();renderSafety();renderPlan();renderFaq();
+ renderPrompts();renderWorkflows();renderChapters();renderOfficial();renderSafety();renderPlan();renderFaq();
  $('safety-reset').addEventListener('click',()=>{if(!confirm('清空本机保存的安全清单勾选？'))return;safeDone={};save(keys.safe,safeDone);renderSafety();});
  $('plan-reset').addEventListener('click',()=>{if(!confirm('清空本机保存的30天计划进度？'))return;planDone={};save(keys.plan,planDone);renderPlan();});
  $('plan-export').addEventListener('click',()=>downloadFile('Muse-30天实操清单.txt',

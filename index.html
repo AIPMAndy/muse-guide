@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Muse 保姆级使用攻略：18章实践教程、60条可复制指令、10套Agent SOP、风险自检、30天路线。AI酋长Andy维护的独立中文开源手册。">
+<meta name="description" content="Muse 保姆级使用攻略：28章实践教程、80条可复制指令、12套Agent SOP、风险自检、30天路线。AI酋长Andy维护的独立中文开源手册。">
 <meta name="theme-color" content="#101c29"><meta property="og:type" content="website">
 <meta property="og:title" content="Muse 保姆级使用攻略 | 从零上手到安全交付">
-<meta property="og:description" content="18章、60条指令、10套SOP，提供真实可验收的个人AI Agent实操路线。">
+<meta property="og:description" content="28章、80条指令、12套SOP，提供真实可验收的个人AI Agent实操路线。">
 <meta property="og:image" content="https://aipmandy.github.io/muse-guide/assets/cover.svg">
 <meta property="og:url" content="https://aipmandy.github.io/muse-guide/"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
@@ -12,7 +12,7 @@
 <a class="skip" href="#main">跳到正文</a>
 <header class="navbar"><div class="wrap nav-inner">
 <a class="brand" href="#top"><span class="mark">M<span>✦</span></span><span>MUSE <b>ATLAS</b><small>独立中文实战指南 · 2026</small></span></a>
-<nav class="navlinks" aria-label="栏目"><a href="#start">新手入门</a><a href="#library">指令库</a><a href="#workflows">业务场景</a><a href="#chapters">系统教程</a><a href="#safety">红队审核</a><a href="#plan">30天路线</a></nav>
+<nav class="navlinks" aria-label="栏目"><a href="#start">新手入门</a><a href="#library">指令库</a><a href="#workflows">业务场景</a><a href="#official">官方能力</a><a href="#chapters">系统教程</a><a href="#safety">红队审核</a><a href="#plan">30天路线</a></nav>
 <div class="nav-actions"><button class="copy-wechat" data-wechat type="button" aria-label="复制微信号 AIPMAndy">微信 AIPMAndy</button><a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">Andy 官网 ↗</a></div></div></header>
 <main id="main"><section class="hero" id="top"><div class="wrap hero-layout"><div class="hero-text">
 <div class="eyebrow">OPEN-SOURCE FIELD MANUAL <span>VERSION 2.0 · 2026.10.21</span></div>
@@ -20,7 +20,7 @@
 <h2>让 AI 真正把事做完。<br>每一步，都能核验。</h2>
 <p>从注册入口、任务拆解到自动化和安全审批。这是一套能复用的独立中文教程，专注 <strong>Meta Muse 个人 AI Agent</strong>，不混淆 Muse Code 和开发者模型。</p>
 <div class="hero-actions"><a class="btn gold" href="#start">开始 10 分钟入门 ↗</a><a class="btn outline" href="#library">复制现成指令 ↓</a></div>
-<div class="metrics"><div><strong>18</strong><span>章完整教程</span></div><div><strong>60</strong><span>条可复制指令</span></div><div><strong>10</strong><span>套业务 SOP</span></div><div><strong>30</strong><span>天实践路线</span></div></div>
+<div class="metrics"><div><strong>28</strong><span>章完整教程</span></div><div><strong>80</strong><span>条可复制指令</span></div><div><strong>12</strong><span>套业务 SOP</span></div><div><strong>30</strong><span>天实践路线</span></div></div>
 <p class="hero-contact">作者 AI 酋长 Andy · <button data-wechat type="button">微信 AIPMAndy（点击复制）</button> · <a href="https://metaver.vip/" target="_blank" rel="noopener noreferrer">metaver.vip ↗</a></p>
 </div><div class="hero-art" aria-label="自制任务执行过程示意图，非Muse官方界面"><div class="orbits"><span></span><span></span></div><div class="art-panel"><p class="art-kicker">MUSE / EXECUTION REVIEW</p><div class="art-big">AGENT<br>TO <em>ACTION.</em></div><div class="art-steps"><div><span>01</span>拆清目标 <b>DEFINE</b></div><div><span>02</span>最小授权 <b>CONTROL</b></div><div><span>03</span>执行取证 <b>EVIDENCE</b></div><div><span>04</span>人工验收 <b>VERIFY ✓</b></div></div><p class="art-note">独立编辑图示 · 非官方 Muse 截图</p></div></div></div></section>
 <div class="ticker"><div class="wrap"><span>定义结果</span><i>◆</i><span>授权最小化</span><i>◆</i><span>分步审批</span><i>◆</i><span>来源核验</span><i>◆</i><span>反证优先</span><i>◆</i><span>持续更新</span></div></div>
@@ -37,6 +37,7 @@
 <div id="prompt-count" class="result-count" aria-live="polite"></div><div id="prompt-grid" class="prompt-grid" aria-live="polite"></div><div id="prompt-empty" class="empty" hidden>没有匹配的指令，试着清空搜索或收藏筛选。</div></div></section>
 <section class="section work" id="workflows"><div class="wrap"><div class="head"><div><span class="kicker">03 / REAL-WORLD SOP</span><h2>10 套流程，<br><em>输入到验收。</em></h2></div><p>每项都标注输入、步骤、审批范围和衡量指标。这里是教学 SOP，不冒充作者亲测成功案例。</p></div><div id="workflow-grid" class="workflow-grid"></div></div></section>
 <section class="section resource" id="templates"><div class="wrap"><div class="head"><div><span class="kicker">04 / COPYABLE DELIVERABLES</span><h2>8 套文档模板，<br><em>直接拿去交付。</em></h2></div><p>任务书、授权矩阵、调研、创作、求职、客户、应急、ROI。全部以 Markdown 开源，可以独立复制和修改。</p></div><div class="chapter-grid"><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/agent-task-brief.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">01</span><h3>Agent任务书</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/permission-matrix.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">02</span><h3>连接器授权矩阵</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/source-evidence.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">03</span><h3>调研证据台账</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/content-ip-sop.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">04</span><h3>AI+IP内容SOP</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/job-search-tracker.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">05</span><h3>求职匹配台账</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/business-delivery.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">06</span><h3>客户交付SOP</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/incident-response.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">07</span><h3>误操作应急报告</h3><small>获取 Markdown 模板 ↗</small></a><a class="chapter-card" href="https://github.com/AIPMAndy/muse-guide/blob/main/templates/roi-scorecard.md" target="_blank" rel="noopener noreferrer"><span class="chapter-no">08</span><h3>订阅ROI评分表</h3><small>获取 Markdown 模板 ↗</small></a></div></div></section>
+<section class="section official-map" id="official"><div class="wrap"><div class="head"><div><span class="kicker">04 / VERIFIED-SOURCE MATRIX</span><h2>官方能力地图，<br><em>证据和实测分开。</em></h2></div><p>官方发布只是功能说明，不代表你所在地区、设备和账号一定开放。所有条目均附 Meta 原始来源；“真实账号未实测”是独立状态。</p></div><div id="official-grid" class="official-grid" aria-label="官方能力来源矩阵"></div><p class="official-note">来源标记：O = Meta 官方发布；T = 真实账号交叉复现。本项目目前不把 O 当作 T。详见 <a href="https://github.com/AIPMAndy/muse-guide/blob/main/docs/OFFICIAL-ABILITY-MAP.md" target="_blank" rel="noopener noreferrer">完整来源和验证机制 ↗</a></p></div></section>
 <section class="section builder" id="builder"><div class="wrap"><div class="head"><div><span class="kicker">04 / TASK BRIEF BUILDER</span><h2>描述问题，<br><em>生成完整任务书。</em></h2></div><p>纯浏览器本地生成，不上传输入，也不直接连接 Muse。请勿输入密码和客户敏感资料。</p></div><div class="builder-layout"><form id="brief-form" class="brief-form">
 <label>目标是什么？<textarea id="brief-goal" required rows="2" placeholder="例如：筛选 10 个符合条件的求职岗位"></textarea></label>
 <label>可使用什么资料？<input id="brief-source" placeholder="例如：公开JD、公司官网"></label>

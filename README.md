@@ -15,9 +15,9 @@
 
 | 板块 | 数量 | 作用 |
 |:--|--:|:--|
-| 深度实战章节 | **18 章** | 从首次上手到安全、系统评估、运营维护 |
-| 场景化任务指令 | **60 条** | 12 类 × 每类 5 条，复制后替换真实参数 |
-| 业务 SOP | **10 套** | 输入、执行链、审批边界、验收指标 |
+| 深度实战章节 | **28 章** | 从首次上手到安全、系统评估、运营维护 |
+| 场景化任务指令 | **80 条** | 12 类 × 每类 5 条，复制后替换真实参数 |
+| 业务 SOP | **12 套** | 输入、执行链、审批边界、验收指标 |
 | 30 天训练计划 | **30 项** | 用真实实践构建自己的任务库，可打卡/导出 |
 | 安全检查 | **12 项** | 授权、注入、共享、写入、回滚、误操作应急 |
 | FAQ | **12 项** | 区分已经公开的官方能力与账户实际开放 |
@@ -27,7 +27,7 @@
 ## 从哪开始
 
 1. 阅读 **[START-HERE.md](START-HERE.md)**，完成一个不用连接私人账户的只读任务。
-2. 从 [18 章目录](#完整课程地图) 挑选当前目标。
+2. 从 [28 章目录](#完整课程地图) 挑选当前目标。
 3. 打开[在线指令库](https://aipmandy.github.io/muse-guide/#library)，搜索并复制提示词。
 4. 对照 [安全指南](docs/SECURITY.md) 检查真实授权。
 5. 用 [30 天实践计划](PLAN-30-DAYS.md) 留存证据和复盘结果。
@@ -58,6 +58,21 @@
 - [订阅ROI评分表](templates/roi-scorecard.md)
 
 详细的[覆盖矩阵](docs/COVERAGE.md)、[真实测试协议](docs/BENCHMARK.md)、[对抗式审核](docs/AUDIT.md)和[待完成路线图](docs/ROADMAP.md)同样公开。
+
+## 官方功能深度专题（2026-10-21 核查）
+
+- [19｜官方下载安装到首个任务](guides/19-official-install.md)
+- [20｜WhatsApp 与跨设备协作](guides/20-whatsapp-cross-device.md)
+- [21｜Mac 桌面版文件与日历实操](guides/21-mac-desktop.md)
+- [22｜购物、比价、Marketplace 与退货](guides/22-shopping-marketplace.md)
+- [23｜财务、订阅费用与省钱任务](guides/23-personal-finance.md)
+- [24｜健身、营养与健康场景](guides/24-fitness-coaching.md)
+- [25｜后台任务、提醒与长期目标](guides/25-proactive-reminders.md)
+- [26｜Muse for Small Business 经营实操](guides/26-small-business-skills.md)
+- [27｜文档、图片生成与可交付结果](guides/27-documents-images.md)
+- [28｜活动日志、审批与撤销权限](guides/28-permissions-audit.md)
+
+新增的[官方功能证据矩阵](docs/OFFICIAL-ABILITY-MAP.md)采用官方发布（O）与真实账户复现（T）双轨记录，避免误导。已查阅官方设备、生产力、购物、财务、运动和经营页面，但暂无跨设备 Muse 登录实测数据。
 
 ## 2026 年 10 月的重要安全提醒
 
