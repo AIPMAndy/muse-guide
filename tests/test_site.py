@@ -75,6 +75,19 @@ class TestMuseAtlas(unittest.TestCase):
   self.assertIn("document.createElement('blockquote')",render)
   self.assertIn("document.createElement('li')",render)
   self.assertNotIn('innerHTML',render)
+ def test_release_counts_and_metadata(self):
+  home=self.html
+  read=(ROOT/'read.html').read_text(encoding='utf-8')
+  readme=(ROOT/'README.md').read_text(encoding='utf-8')
+  self.assertIn('VERSION 3.0',home)
+  for label in ('28 章系统教程','80 条指令','12 套流程'):
+   self.assertIn(label,home,label)
+  self.assertIn('80 条指令',read)
+  self.assertIn('v3.0.0',readme)
+  self.assertIn('16 类 × 每类 5 条',readme)
+  self.assertIn('https://aipmandy.github.io/muse-guide/',home)
+  self.assertTrue((ROOT/'sitemap.xml').is_file())
+  self.assertTrue((ROOT/'robots.txt').is_file())
  def test_mobile_breakpoints(self):
   self.assertIn('@media(max-width:540px)',self.css)
   self.assertIn('mobile-contact',self.css)
