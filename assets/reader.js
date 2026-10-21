@@ -22,23 +22,74 @@ x.href=finalHref;if(finalHref.startsWith('https://')&&!finalHref.startsWith(loca
  if(last<s.length)node.append(document.createTextNode(s.slice(last)));
 }
 function renderMarkdown(str){
- const root=document.createDocumentFragment();const lines=str.replace(/\r/g,'').split('\n');let list=null,kind='',pre=null;
- const flush=()=>{list=null;kind='';};
- for(const raw of lines){const line=raw.trim();
- if(line.startsWith('\x60\x60\x60')){flush();if(pre){root.append(pre);pre=null;}else{pre=element('pre');pre.append(element('code',''));}continue;}
- if(pre){pre.firstChild.textContent+=raw+'\n';continue;}
- if(!line){flush();continue;}
- if(/^---+$/.test(line)){flush();root.append(element('hr'));continue;}
- const heading=line.match(/^(#{1,4})\s+(.+)$/);if(heading){flush();const h=element('h'+Math.min(heading[1].length,4));inline(h,heading[2]);root.append(h);continue;}
- const block=line.match(/^>\s?(.+)$/);if(block){flush();const b=element('blockquote');inline(b,block[1]);root.append(b);continue;}
- const bullet=line.match(/^(-|\d+\.)\s+(.*)$/);
- if(bullet){const newkind=bullet[1]==='-'?'ul':'ol';if(!list||newkind!==kind){list=element(newkind);root.append(list);kind=newkind;}
- const li=element('li');inline(li,bullet[2]);list.append(li);continue;}
- flush();const p=element('p');inline(p,line);root.append(p);
+ const root=document.createDocumentFragment();
+ const lines=str.replace(/\r/g,'').split('\n');
+ let listStack=[],paragraph=null,codeBlock=null,quote=null;
+ const closeParagraph=()=>{paragraph=null;quote=null;};
+ const closeLists=()=>{listStack=[];};
+ const isSeparator=s=>/^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(s.trim());
+ const cells=s=>s.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map(x=>x.trim());
+ for(let i=0;i<lines.length;i++){
+  const raw=lines[i],line=raw.trim();
+  if(line.startsWith(String.fromCharCode(96,96,96))){
+   closeParagraph();closeLists();
+   if(codeBlock){root.append(codeBlock);codeBlock=null;}
+   else{codeBlock=document.createElement('pre');codeBlock.append(document.createElement('code'));}
+   continue;
+  }
+  if(codeBlock){codeBlock.firstChild.append(document.createTextNode(raw+'\n'));continue;}
+  if(!line){closeParagraph();closeLists();continue;}
+  if(line.startsWith('|')&&i+1<lines.length&&isSeparator(lines[i+1])){
+   closeParagraph();closeLists();
+   const headings=cells(line);const table=document.createElement('table');
+   const thead=document.createElement('thead'),headrow=document.createElement('tr');
+   headings.forEach(h=>{const th=document.createElement('th');inline(th,h);headrow.append(th);});
+   thead.append(headrow);table.append(thead);
+   const tbody=document.createElement('tbody');i+=2;
+   while(i<lines.length&&lines[i].trim().startsWith('|')){
+    const tr=document.createElement('tr');const rowcells=cells(lines[i]);
+    headings.forEach((h,k)=>{const td=document.createElement('td');inline(td,rowcells[k]||'');tr.append(td);});
+    tbody.append(tr);i++;
+   }
+   table.append(tbody);root.append(table);i--;continue;
+  }
+  if(/^---+$/.test(line)){closeParagraph();closeLists();root.append(document.createElement('hr'));continue;}
+  const heading=line.match(/^(#{1,4})\s+(.+)$/);
+  if(heading){closeParagraph();closeLists();const h=document.createElement('h'+heading[1].length);inline(h,heading[2]);root.append(h);continue;}
+  const block=line.match(/^>\s?(.*)$/);
+  if(block){closeLists();paragraph=null;
+   if(!quote){quote=document.createElement('blockquote');root.append(quote);}
+   const p=document.createElement('p');inline(p,block[1]);quote.append(p);continue;
+  }
+  const bullet=raw.match(/^(\s*)([-*]|\d+\.)\s+(.+)$/);
+  if(bullet){
+   closeParagraph();
+   const indent=bullet[1].length;
+   const kind=/^\d/.test(bullet[2])?'ol':'ul';
+   while(listStack.length && (listStack[listStack.length-1].indent>indent || (listStack[listStack.length-1].indent===indent&&listStack[listStack.length-1].kind!==kind)))listStack.pop();
+   if(!listStack.length||listStack[listStack.length-1].indent<indent){
+    const next=document.createElement(kind);
+    if(listStack.length){const parent=listStack[listStack.length-1].last;
+      if(parent)parent.append(next);else root.append(next);
+    }else root.append(next);
+    listStack.push({indent,kind,node:next,last:null});
+   }
+   const li=document.createElement('li');
+   const value=bullet[3],task=value.match(/^\[([ xX])\]\s+(.*)$/);
+   if(task){const box=document.createElement('input');box.type='checkbox';box.checked=task[1].toLowerCase()==='x';box.disabled=true;box.setAttribute('aria-label','文档参考检查项');li.append(box);inline(li,task[2]);}
+   else inline(li,value);
+   const current=listStack[listStack.length-1];current.node.append(li);current.last=li;
+   continue;
+  }
+  closeLists();quote=null;
+  if(!paragraph){paragraph=document.createElement('p');root.append(paragraph);}
+  else paragraph.append(document.createTextNode(' '));
+  inline(paragraph,line);
  }
- if(pre)root.append(pre);
+ if(codeBlock)root.append(codeBlock);
  return root;
 }
+
 fetch('data/library.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('目录HTTP '+r.status);return r.json();}).then(async d=>{
  const chapters=d.chapters;knownSlugs=new Set(chapters.map(x=>x.slug));const u=new URL(location.href);const slug=u.searchParams.get('chapter')||chapters[0].slug;let index=chapters.findIndex(c=>c.slug===slug);if(index<0)index=0;
  const current=chapters[index];currentDocUrl=current.url;document.title=current.title+' | Muse Atlas';$('reader-title').textContent=current.title;

@@ -60,6 +60,21 @@ class TestMuseAtlas(unittest.TestCase):
  def test_js_control_references(self):
   ids=set(re.findall(r"\$\('([^']+)'\)",self.js))
   self.assertFalse(ids-self.parser.ids,'Missing DOM IDs: '+','.join(ids-self.parser.ids))
+ def test_official_provenance_and_safe_rendering(self):
+  from urllib.parse import urlparse
+  capabilities=self.data.get('capabilities',[])
+  self.assertEqual(len(capabilities),12)
+  chapter_slugs={c['slug'] for c in self.data['chapters']}
+  for c in capabilities:
+   with self.subTest(title=c['title']):
+    self.assertIn(urlparse(c['url']).hostname,('ai.meta.com','about.fb.com'))
+    self.assertIn(c['chapter'],chapter_slugs)
+    self.assertEqual(c['validation'],'T 真实账号未实测')
+  render=(ROOT/'assets/reader.js').read_text(encoding='utf-8')
+  self.assertIn("document.createElement('table')",render)
+  self.assertIn("document.createElement('blockquote')",render)
+  self.assertIn("document.createElement('li')",render)
+  self.assertNotIn('innerHTML',render)
  def test_mobile_breakpoints(self):
   self.assertIn('@media(max-width:540px)',self.css)
   self.assertIn('mobile-contact',self.css)
