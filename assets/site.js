@@ -12,7 +12,7 @@ async function copy(value,label='内容已复制'){
  catch(_){window.prompt('复制未自动完成，可在此手动复制：',value);}
 }
 document.querySelectorAll('[data-wechat]').forEach(b=>b.addEventListener('click',()=>copy('AIPMAndy','微信号 AIPMAndy 已复制')));
-let library, favorites=new Set(read(keys.fav,[]));if(!Array.isArray([...favorites]))favorites=new Set();
+let library;const storedFavorites=read(keys.fav,[]);let favorites=new Set(Array.isArray(storedFavorites)?storedFavorites:[]);
 let planDone=read(keys.plan,{}),safeDone=read(keys.safe,{});
 const planItems=[
 '确认 Meta 官方 Muse 介绍、登录域名与账号可见入口',
@@ -71,7 +71,7 @@ function renderWorkflows(){
 function renderChapters(){
  $('chapter-grid').replaceChildren(...library.chapters.map(c=>{
  const a=el('a','chapter-card');if(!/^guides\/[0-9a-z-]+\.md$/.test(c.url))return el('div','','章节路径无效');
- a.href=c.url;a.append(el('span','chapter-no',String(c.n).padStart(2,'0')),el('h3','',c.title),el('small','','阅读全文 Markdown ↗'));return a;
+ a.href='read.html?chapter='+encodeURIComponent(c.slug);a.append(el('span','chapter-no',String(c.n).padStart(2,'0')),el('h3','',c.title),el('small','','阅读全文 Markdown ↗'));return a;
  }));}
 function renderSafety(){
  const root=$('safety-list');

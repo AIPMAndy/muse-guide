@@ -19,7 +19,7 @@ class TestMuseAtlas(unittest.TestCase):
   cls.data=json.loads((ROOT/'data/library.json').read_text(encoding='utf-8'))
   cls.parser=Scan();cls.parser.feed(cls.html)
  def test_site_files(self):
-  for p in ['README.md','START-HERE.md','PLAN-30-DAYS.md','.nojekyll','index.html','assets/site.css','assets/site.js','assets/cover.svg','assets/favicon.svg','data/library.json','docs/SOURCES.md','docs/SECURITY.md','docs/CHANGELOG.md','.github/workflows/deploy-pages.yml']:
+  for p in ['README.md','START-HERE.md','PLAN-30-DAYS.md','.nojekyll','index.html','assets/site.css','assets/site.js','assets/reader.js','assets/reader.css','read.html','assets/cover.svg','assets/favicon.svg','data/library.json','docs/SOURCES.md','docs/SECURITY.md','docs/CHANGELOG.md','.github/workflows/deploy-pages.yml']:
    with self.subTest(path=p):self.assertTrue((ROOT/p).exists(),p)
  def test_paths_and_anchor_targets(self):
   for link in self.parser.refs:
@@ -51,6 +51,7 @@ class TestMuseAtlas(unittest.TestCase):
    self.assertIn(w,self.html)
   self.assertFalse(self.parser.external_scripts)
   self.assertIn('localStorage',self.js)
+  self.assertIn('read.html?chapter=',self.js)
   self.assertNotIn('innerHTML',self.js)
  def test_security_evidence(self):
   for p in ['docs/SECURITY.md','docs/SOURCES.md']:

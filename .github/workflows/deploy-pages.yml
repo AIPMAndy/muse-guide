@@ -21,7 +21,7 @@ jobs:
       - name: Validate JSON syntax
         run: python3 -m json.tool data/library.json > /dev/null
       - name: Check JavaScript syntax
-        run: node --check assets/site.js
+        run: node --check assets/site.js && node --check assets/reader.js
       - name: Run standard library tests
         run: python3 -m unittest discover -s tests -v
   deploy:
