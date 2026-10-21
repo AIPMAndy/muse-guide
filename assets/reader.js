@@ -12,7 +12,7 @@ function inline(node,s){
  else if(v.startsWith('\x60'))node.append(element('code',v.slice(1,-1)));
  else{const a=v.match(/^\[([^\]]+)\]\(([^)]+)\)$/);if(a){const href=a[2];if(/^(https:\/\/|\.\.\/|[a-z0-9][a-z0-9./#-]*$)/i.test(href)&&!href.startsWith('//')){const x=element('a',a[1]);let finalHref=href;
 if(!href.startsWith('https://')){const resolved=new URL(href,new URL(currentDocUrl,location.href));
- const page=resolved.pathname.match(/\\/guides\\/([a-z0-9-]+)\\.md$/);
+ const page=resolved.pathname.match(/\/guides\/([a-z0-9-]+)\.md$/);
  if(page&&knownSlugs.has(page[1]))finalHref='read.html?chapter='+encodeURIComponent(page[1]);
  else if(resolved.pathname.includes('/docs/')&&resolved.pathname.endsWith('.md')){const part=resolved.pathname.split('/docs/')[1];finalHref='https://github.com/AIPMAndy/muse-guide/blob/main/docs/'+part;}
  else finalHref=resolved.href;
