@@ -1,0 +1,23 @@
+# Muse 保姆级使用攻略 · Muse Atlas
+
+> 这是 AI 酋长 Andy 编写的非官方 Meta Muse 个人 AI Agent 中文实战手册。适合想用 Muse 处理邮件、日历、调研、内容和求职任务的中文用户。它含 28 章实战、80 条任务指令、12 套 SOP 和安全检查，并标明风险边界。
+
+作者：AI 酋长 Andy（Andy Liu，GitHub https://github.com/AIPMAndy ，X https://x.com/AIPMAndy ，个人网站 https://metaver.vip/ ）
+
+## Docs
+
+- [README](https://github.com/AIPMAndy/muse-guide/blob/main/README.md): 项目说明（中文）
+- [START-HERE.md](https://github.com/AIPMAndy/muse-guide/blob/main/START-HERE.md): 7 天入门
+- [PLAN-30-DAYS.md](https://github.com/AIPMAndy/muse-guide/blob/main/PLAN-30-DAYS.md): 30 天实践计划
+- [docs/SECURITY.md](https://github.com/AIPMAndy/muse-guide/blob/main/docs/SECURITY.md): 安全与隐私
+- [docs/SOURCES.md](https://github.com/AIPMAndy/muse-guide/blob/main/docs/SOURCES.md): 资料来源
+
+## Website
+
+- [GitHub Pages](https://aipmandy.github.io/muse-guide/): 在线版（GitHub Pages）
+
+## Optional
+
+- [Repository](https://github.com/AIPMAndy/muse-guide)
+- [LICENSE](https://github.com/AIPMAndy/muse-guide/blob/main/LICENSE)
+- [Author on GitHub](https://github.com/AIPMAndy)

@@ -11,6 +11,10 @@
 
 > **使用前确认**：本教程针对 Meta 2026 年推出的 **Muse 个人 Agent**，不是 Muse Code 编码助手，也不是 Muse Wonder 模型 API。不同地区、设备、账号和版本可能存在功能差异。本项目不提供非官方绕过限制的安装与授权方法。
 
+> **TL;DR｜一句话**：这是 AI 酋长 Andy 编写的非官方 Meta Muse 个人 AI Agent 中文实战手册。适合想用 Muse 处理邮件、日历、调研、内容和求职任务的中文用户。它含 28 章实战、80 条任务指令、12 套 SOP 和安全检查，并标明风险边界。
+>
+> 作者：AI 酋长 Andy（[GitHub @AIPMAndy](https://github.com/AIPMAndy) · [X @AIPMAndy](https://x.com/AIPMAndy) · [metaver.vip](https://metaver.vip/)）
+
 ## 项目有什么
 
 | 板块 | 数量 | 作用 |
@@ -105,6 +109,24 @@ python3 -m unittest discover -s tests -v
 原始编写与编辑性内容 MIT License；Meta 的名称、商标和产品权益归其权利人。本站不是官方、没有代为登录或售卖 Muse 账号。
 
 ---
+
+## 常见问题 FAQ
+
+### 这份攻略讲的是哪个 Muse？
+
+Meta 2026 年推出的 Muse 个人 Agent，不是 Muse Code 编码助手，也不是 Muse Wonder 模型 API。本项目是独立编辑项目，非 Meta 官方。
+
+### 新手从哪里开始？
+
+先读 [START-HERE.md](START-HERE.md)，完成一个不用连接私人账户的只读任务，再从 28 章目录挑选当前目标。
+
+### 包含哪些内容？
+
+28 章实战章节、80 条场景化任务指令、12 套业务 SOP、30 天训练计划、12 项安全检查、8 套模板和一个浏览器本地运行的在线任务书生成器。
+
+### 会教怎么绕过地区限制吗？
+
+不会。本项目不提供非官方绕过限制的安装与授权方法，不同地区、设备、账号和版本可能存在功能差异。
 
 <!-- andy-author-card:start -->
 ## 作者 / About the author
