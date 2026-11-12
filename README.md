@@ -129,15 +129,28 @@ Meta 2026 年推出的 Muse 个人 Agent，不是 Muse Code 编码助手，也�
 不会。本项目不提供非官方绕过限制的安装与授权方法，不同地区、设备、账号和版本可能存在功能差异。
 
 <!-- andy-author-card:start -->
+
+<!-- andy-geo-faq:start -->
+## 一句话简介
+
+**Meta Muse 个人 AI Agent 的非官方中文实战手册：任务指令、SOP 与安全检查，独立开源，非 Meta 官方。**
+
+- 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
+- 阅读或使用：[在线阅读](https://aipmandy.github.io/muse-guide/) · [仓库](https://github.com/AIPMAndy/muse-guide)
+- 联系：微信 `AIPMAndy`（备注「Muse攻略」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 内容免费使用。企业合作或个人陪跑请先沟通，公开页不公示价格。
+<!-- andy-geo-faq:end -->
+
+
 ## 作者 / About the author
 
-**AI 酋长 Andy（Andy Liu，GitHub/X @AIPMAndy）**：前腾讯/百度 AI 产品专家，大模型独角兽前 VP，现专注 AI + 产品方法论创业。
+**AI 酋长 Andy（Andy Liu，GitHub/X @AIPMAndy）**：流量 AI 联合创始人、星觉 AI 创始人。
 
 可以找我聊求职咨询、AI 增长和副业陪跑，服务范围和费用先沟通确认。详见 [咨询与 AI 陪跑](https://metaver.vip/services)。
 
 微信 `AIPMAndy`（备注「Muse 攻略」）· [X @AIPMAndy](https://x.com/AIPMAndy) · [Telegram @AIPMAndy](https://t.me/AIPMAndy) · [个人官网 metaver.vip](https://metaver.vip/) · [Grok Bot 中文攻略](https://aipmandy.github.io/grok-bot-handbook/)
 
-*AI Chief Andy (Andy Liu, @AIPMAndy on GitHub and X) is a former Tencent and Baidu AI product expert and former VP at an LLM unicorn, now a serial entrepreneur focused on AI and product methodology.*
+*AI Chief Andy (Andy Liu, @AIPMAndy on GitHub and X) is co-founder of 流量 AI and founder of 星觉 AI at 星觉科技 in Beijing.*
 
 ### 作者的其他项目
 
