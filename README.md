@@ -1,5 +1,16 @@
 # Muse 保姆级使用攻略 · Muse Atlas 中文开源手册
 
+<!-- andy-pdf-edition:start -->
+## 精美 PDF 电子书
+
+[**免费下载《Muse 保姆级使用攻略》**](pdf/muse-guide-guide.pdf) · [直接下载 PDF](https://github.com/AIPMAndy/muse-guide/raw/refs/heads/main/pdf/muse-guide-guide.pdf)
+
+**171 页 · A5 手机阅读版 · 可点击目录 · 1.05 MB**  
+整理日期：2026-11-13。包含完整实操正文、案例、模板与原始来源；平台规则与价格沿用原资料的核查日期。
+
+**作者与服务（广告）**：AI 酋长 Andy · 个人微信 **AIPMAndy** · [个人官网](https://metaver.vip/) · [公司官网](https://www.a6no1.cn/)。免费教程可直接使用，咨询与合作自愿选择。
+<!-- andy-pdf-edition:end -->
+
 > **一套可验证、能更新、带风险边界的 Meta Muse 个人 AI Agent 中文实战知识库。**  
 > 版本 `v3.0.0` · 内容核查 `2026-10-21` · 独立编辑项目，**非 Meta 官方**。
 
