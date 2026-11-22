@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muse 官方资料复核工作台｜12 条历史来源 · AI 酋长 Andy</title>
+<meta name="description" content="从 Muse Atlas 原始 JSON 读取 12 条历史官方来源，搜索、筛选、记录本机人工复核状态并导出 TXT。官方资料不等于真实账号实测。">
+<meta name="robots" content="index,follow"><meta name="theme-color" content="#101c29">
+<link rel="canonical" href="https://aipmandy.github.io/muse-guide/sources.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website"><meta property="og:title" content="Muse 官方来源复核工作台｜AI 酋长 Andy">
+<meta property="og:description" content="12 条历史官方资料的独立复核清单，原始日期不冒充最新核验。">
+<meta property="og:url" content="https://aipmandy.github.io/muse-guide/sources.html">
+<meta property="og:image" content="https://aipmandy.github.io/muse-guide/assets/cover.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Muse 官方来源复核工作台","url":"https://aipmandy.github.io/muse-guide/sources.html","description":"基于本项目历史资料的人工核验工作台，不执行外部账号操作或自动核验。","applicationCategory":"EducationalApplication","operatingSystem":"Any modern web browser","inLanguage":"zh-CN","isAccessibleForFree":true,"dateModified":"2026-11-22","author":{"@type":"Person","name":"AI 酋长 Andy","url":"https://metaver.vip/"},"publisher":{"@type":"Organization","name":"星觉科技","url":"https://www.a6no1.cn/"}}</script>
+<style>
+:root{color-scheme:dark;font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#101c29;color:#f4f3f1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;line-height:1.65}a{color:inherit;text-underline-offset:4px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e6b869;outline-offset:3px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;color:#111;z-index:9;padding:10px}
+.wrap{width:min(1100px,calc(100% - 40px));margin:auto}header{border-bottom:1px solid #35404a}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.06em;text-decoration:none}.brand span{color:#e9be79}.nav-links{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem;color:#d5d7d8}.eyebrow{font-size:.73rem;font-weight:750;letter-spacing:.16em;color:#e7b977;text-transform:uppercase}.hero{padding:74px 0 42px;border-bottom:1px solid #35404a}h1{font-size:clamp(2rem,5.2vw,3.8rem);letter-spacing:-.045em;line-height:1.2;margin:.35em 0}h1 em{font-style:normal;color:#e5b56e}.lead{font-size:1.05rem;max-width:70ch;color:#c1cbd1}.trust{border-left:3px solid #e4b971;padding:14px 20px;background:#1b2b39;color:#e6eaec;max-width:75ch}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.btn{border:1px solid #78818a;border-radius:8px;padding:12px 18px;background:transparent;color:#f4f3f1;text-decoration:none;min-height:46px}.btn.primary{background:#e7bd79;color:#17212b;border-color:#e7bd79;font-weight:750}.btn:hover{border-color:#f6ce8c}.workbench{padding:34px 0 70px}.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:24px}.kpi{padding:19px;border:1px solid #384550;border-radius:10px;background:#182837}.kpi strong{display:block;font-size:1.65rem}.kpi small{color:#b0c1ca}.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}.field{display:grid;gap:6px;flex:1 1 220px}.field span{font-size:.83rem;color:#becbd1}.field input,.field select{min-width:0;width:100%;min-height:46px;background:#172938;border:1px solid #60707b;border-radius:7px;color:#fff;padding:10px 12px}.filter-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:20px}.help{font-size:.86rem;color:#afbec7}.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.source{background:#192a38;border:1px solid #42525e;border-radius:12px;padding:22px;min-width:0}.source h2{font-size:1.15rem;line-height:1.4;letter-spacing:-.015em;margin:6px 0 14px}.meta{font-size:.82rem;color:#c1cbd1}.meta b{color:#e5bd79}.source p{font-size:.91rem;color:#cfdae0;overflow-wrap:anywhere}.source-link{display:inline-block;font-size:.92rem;font-weight:650;color:#f3c68b;overflow-wrap:anywhere}.tag{display:inline-block;font-size:.75rem;border:1px solid #657481;padding:2px 8px;border-radius:30px;color:#dbe3e7}.source-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}.source-actions button{background:#233847;color:#fafbfc;border:1px solid #738391;border-radius:7px;min-height:44px;padding:7px 12px}.source-actions .reviewed{background:#263c32;border-color:#76b59c}.empty{padding:25px;border:1px dashed #70808c;border-radius:10px}.foot{border-top:1px solid #38444d;padding:30px 0 45px;font-size:.91rem;color:#bccbd2}.foot-links{display:flex;gap:16px;flex-wrap:wrap}.foot p{max-width:70ch}#status{min-height:25px}a:hover{text-decoration-thickness:2px}
+@media(max-width:700px){.hero{padding:46px 0 28px}.results{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi{padding:12px}.kpi strong{font-size:1.3rem}.wrap{width:min(1100px,calc(100% - 28px))}.nav{align-items:flex-start}.source{padding:18px}}
+@media(max-width:360px){.kpis{grid-template-columns:1fr 1fr}.kpi:last-child{grid-column:span 2}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主内容</a>
+<header><div class="wrap nav"><a class="brand" href="./">MUSE <span>ATLAS</span></a><nav class="nav-links" aria-label="页面导航"><a href="./">返回手册</a><a href="pdf/muse-guide-guide.pdf">历史 PDF</a><a href="https://metaver.vip/services" rel="noopener noreferrer">咨询服务</a></nav></div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Evidence review / Local-first</p>
+<h1>真正可信的 Agent 教程，<br><em>来源必须能复核。</em></h1>
+<p class="lead">此页面直接读取仓库 <a href="https://github.com/AIPMAndy/muse-guide/blob/main/data/library.json">data/library.json</a> 的 12 条能力证据，不新增未经证实的功能，不上传资料，也不将官方声明冒充真实账号实测。</p>
+<p class="trust"><strong>时间边界：</strong>原始资料核对日期是 <b>2026-10-21</b>。下方过期提示仅用于决定优先复核顺序，<strong>不表示</strong>链接失效或产品功能被证实不存在。所有 O 官方文件所对应的产品能力仍标注 <strong>T 真实账号未实测</strong>。本页制作于 2026-11-22，并非当天重新验证全部官方资料。</p>
+<div class="actions"><a class="btn primary" href="#workbench">开始核查 12 条来源</a><a class="btn" href="pdf/muse-guide-guide.pdf">下载原 171 页 PDF</a><a class="btn" href="https://www.a6no1.cn/" rel="noopener noreferrer">星觉科技官网</a></div>
+</div></section>
+<section class="workbench" id="workbench"><div class="wrap">
+<div class="kpis" aria-label="来源数量"><div class="kpi"><strong id="all-count">—</strong><small>原始能力记录</small></div><div class="kpi"><strong id="stale-count">—</strong><small>超过 30 天待复核</small></div><div class="kpi"><strong id="checked-count">—</strong><small>本机手动标记</small></div></div>
+<div class="filters">
+<label class="field"><span>按名称、能力、原始说明搜索</span><input type="search" id="search" placeholder="例：Mac、审批、WhatsApp"></label>
+<label class="field"><span>复核状态</span><select id="filter"><option value="all">全部资料</option><option value="stale">历史核对已超过 30 天</option><option value="unchecked">本机尚未手动检查</option><option value="checked">本机已手动检查</option></select></label>
+</div>
+<div class="filter-actions"><button class="btn" type="button" id="clear">重置筛选</button><button class="btn" type="button" id="export">导出当前结果 TXT</button><span class="help">复核标记只存在当前浏览器中；清空缓存会丢失。</span></div>
+<p id="status" role="status" aria-live="polite">正在加载原始来源记录……</p>
+<div id="results" class="results" aria-label="原始来源清单"></div>
+<p class="help">复核流程：打开官方原始链接 → 核对适用地区/账号版本及最新条款 → 如有真实账号证据，另行记录 → 再手动标记。标记仅代表你自己检查过，不会改变公开资料的历史日期或证明功能可用。</p>
+</div></section></main>
+<footer class="foot"><div class="wrap"><div class="foot-links"><a href="https://metaver.vip/">个人官网</a><a href="https://www.a6no1.cn/">公司官网</a><a href="https://metaver.vip/services">服务入口</a><a href="https://github.com/AIPMAndy/muse-guide">GitHub 与修正 Issue</a></div><p>作者：AI 酋长 Andy · 星觉科技。个人微信 <strong>AIPMAndy</strong> <button type="button" id="copy-wechat" class="btn">复制微信号</button></p><p>非 Meta 官方网站。教学模拟、官方文档和真实账号运行证据须严格区分。原 171 页 PDF 未在本次升级中修改或重新出版。</p></div></footer>
+<script>
+(function(){
+'use strict';
+const byId=id=>document.getElementById(id);
+const key='muse-atlas-evidence-local-v1';
+let records=[], manually={};
+try {const raw=JSON.parse(localStorage.getItem(key)||'{}');if(raw&&typeof raw==='object'&&!Array.isArray(raw))manually=raw;}catch(_){}
+const save=()=>{try{localStorage.setItem(key,JSON.stringify(manually));return true;}catch(_){byId('status').textContent='本机存储不可用，当前标记不会持久保存。';return false;}};
+const ageDays=date=>{const t=Date.parse(date+'T00:00:00Z');return Number.isFinite(t)?Math.floor((Date.now()-t)/86400000):null;};
+const stale=item=>{const d=ageDays(item.checked);return d!==null&&d>30;};
+const idOf=item=>item.url+'|'+item.title;
+function validUrl(s){try{const u=new URL(s);return u.protocol==='https:'&&['ai.meta.com','about.fb.com'].includes(u.hostname);}catch(_){return false;}}
+function filtered(){const q=byId('search').value.trim().toLocaleLowerCase('zh-CN'),mode=byId('filter').value;return records.filter(x=>{
+ if(q&&![x.title,x.note,x.chapter,x.url].join(' ').toLocaleLowerCase('zh-CN').includes(q))return false;
+ if(mode==='stale')return stale(x);
+ if(mode==='checked')return !!manually[idOf(x)];
+ if(mode==='unchecked')return !manually[idOf(x)];
+ return true;
+});}
+function make(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=String(txt);return e;}
+function render(){
+ const list=filtered(),root=byId('results');root.replaceChildren();
+ byId('all-count').textContent=records.length;
+ byId('stale-count').textContent=records.filter(stale).length;
+ byId('checked-count').textContent=records.filter(x=>!!manually[idOf(x)]).length;
+ if(!list.length)root.appendChild(make('p','empty','当前筛选条件下没有记录。'));
+ list.forEach((x,i)=>{
+ const card=make('article','source'),meta=make('div','meta','历史核验：'+x.checked+' · '+x.evidence+' · '+x.validation);
+ const mark=make('span','tag',stale(x)?'超过30天，建议复核':'仍在30天窗口内');card.append(meta,mark,make('h2','',x.title),make('p','',x.note));
+ const link=make('a','source-link','打开官方原始页面 ↗');link.href=x.url;link.target='_blank';link.rel='noopener noreferrer';card.append(link);
+ const row=make('div','source-actions'),button=make('button',manually[idOf(x)]?'reviewed':'',manually[idOf(x)]?'✓ 我已自行检查（取消标记）':'我已自行打开并检查');
+ button.type='button';button.setAttribute('aria-pressed',manually[idOf(x)]?'true':'false');
+ button.addEventListener('click',()=>{if(manually[idOf(x)])delete manually[idOf(x)];else manually[idOf(x)]=new Date().toISOString().slice(0,10);save();render();});
+ row.append(button,make('span','help',manually[idOf(x)]?'本机检查日：'+manually[idOf(x)]:'尚无本机复核记录'));card.append(row);root.append(card);
+ });
+ byId('status').textContent='显示 '+list.length+' / '+records.length+' 条原始来源；本机人工标记不改变源资料日期。';
+}
+function exportText(){
+ const arr=filtered();const lines=['Muse Atlas｜人工来源复核清单','导出日（本机）：'+new Date().toLocaleDateString('zh-CN'),'原始编目日期：2026-10-21','注意：官方说明 ≠ 真实账号实测；历史来源未自动重新验证',''];
+ arr.forEach((x,i)=>lines.push((i+1)+'. '+x.title,'历史核对：'+x.checked,'官方链接：'+x.url,'原始内容：'+x.note,'证据类型：'+x.evidence+'；'+x.validation,'本机标记日期：'+(manually[idOf(x)]||'尚未标记'),'最新人工复核日期：______','是否适用于本人账号/地区：______','差异或待办：______',''));
+ const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Muse-来源复核清单.txt';a.style.display='none';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+async function copyWechat(){try{await navigator.clipboard.writeText('AIPMAndy');byId('copy-wechat').textContent='复制成功：AIPMAndy';}catch(_){byId('copy-wechat').textContent='复制失败，请手动复制 AIPMAndy';}}
+byId('copy-wechat').addEventListener('click',copyWechat);
+byId('search').addEventListener('input',render);byId('filter').addEventListener('change',render);
+byId('clear').addEventListener('click',()=>{byId('search').value='';byId('filter').value='all';render();byId('search').focus();});
+byId('export').addEventListener('click',exportText);
+fetch('data/library.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(d=>{
+ if(!Array.isArray(d.capabilities)||!d.capabilities.length)throw Error('没有官方能力记录');
+ const safe=d.capabilities.filter(x=>x&&typeof x.title==='string'&&typeof x.checked==='string'&&validUrl(x.url)&&typeof x.note==='string'&&typeof x.evidence==='string'&&typeof x.validation==='string');
+ if(safe.length!==d.capabilities.length)throw Error('来源存在不可验证地址，已停止加载');
+ records=safe;render();
+}).catch(e=>{byId('status').textContent='原始来源读取失败：'+e.message+'。可在 GitHub 直接检查 data/library.json。';});
+})();
+</script></body></html>
