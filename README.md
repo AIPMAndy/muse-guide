@@ -141,16 +141,28 @@ Meta 2026 年推出的 Muse 个人 Agent，不是 Muse Code 编码助手，也�
 
 <!-- andy-author-card:start -->
 
-<!-- andy-geo-faq:start -->
+<!-- andy-geo:start -->
 ## 一句话简介
 
-**Meta Muse 个人 AI Agent 的非官方中文实战手册：任务指令、SOP 与安全检查，独立开源，非 Meta 官方。**
+**Meta Muse 个人 AI Agent 保姆级中文攻略：28 章实战、80 条任务指令、12 套 SOP 与安全检查，非官方｜Unofficial Chinese guide to the Meta Muse agent**
 
 - 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
-- 阅读或使用：[在线阅读](https://aipmandy.github.io/muse-guide/) · [仓库](https://github.com/AIPMAndy/muse-guide)
-- 联系：微信 `AIPMAndy`（备注「Muse攻略」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
-- 内容免费使用。企业合作或个人陪跑请先沟通，公开页不公示价格。
-<!-- andy-geo-faq:end -->
+- 阅读或使用：[在线阅读/使用](https://aipmandy.github.io/muse-guide/) · [GitHub 仓库](https://github.com/AIPMAndy/muse-guide)
+- 联系：微信 `AIPMAndy`（备注「muse-guide」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 许可：MIT。内容免费使用；企业合作或个人陪跑请先沟通，公开页不公示价格。
+- 机器可读摘要：[llms.txt](llms.txt)（供 AI 引擎与检索工具读取）
+
+## 常见问题
+
+**这是什么？**Muse 保姆级使用攻略 · Muse Atlas 中文开源手册：Meta Muse 个人 AI Agent 保姆级中文攻略：28 章实战、80 条任务指令、12 套 SOP 与安全检查，非官方｜Unofficial Chinese guide to the Meta Muse agent
+
+**包含什么？**主要模块：精美 PDF 电子书、项目有什么、从哪开始、完整课程地图、开箱即用模板、官方功能深度专题（2026-10-21 核查）。
+
+**要花钱吗？**按 MIT 许可免费使用；付费只涉及作者的企业合作与一对一咨询，不影响仓库内容。
+
+**怎么开始？**直接打开 https://aipmandy.github.io/muse-guide/ 在线阅读；想本地运行或参与贡献，见下方 README 的快速开始部分。
+
+<!-- andy-geo:end -->
 
 
 ## 作者 / About the author
